@@ -20,6 +20,29 @@ describe('app', function () {
             });
         });
     });
+
+    //new test
+    it('should return age value 16', function () {
+        expect(app.assignToSwimmingCourse('Sonja', '10/04/2000')).toEqual({
+        name: 'Sonja', age: 19, course: 'kids'});
+    });
+    it('should return adults as course value', function () {
+        expect(app.assignToSwimmingCourse('Shai', '11/05/1994')).toEqual({
+        name: 'Shai', age:22, course: 'adults'
+    });
+});
+    describe('calculateArea', function () {
+        it('should return area of figure & message', function () {
+            expect(app.calculateArea(6,1,3,'Succes', 'Fail')).toEqual({area: 3, message: 'Succes'});
+            expect(app.calculateArea(2,6,6,'Succes', 'Fail')).toEqual({area: -6, message: 'Fail'});
+            it('should return area of figure & message', function () {
+                expect(app.calculateArea("",1,'','Succes', 'Fail')).toEqual(false);
+            });
+            it('should return area 0 & message "Big null"', function () {
+                expect(app.calculateArea(0,0,0,'Succes', 'Fail')).toEqual({area: 0, message:'Big null'});
+            });
+        });
+    });
 });
 
 
